@@ -5,7 +5,7 @@ using UnityEngine;
 public class PLAYER_CONTROLER : MonoBehaviour
 {
     int playerhealth = 3; 
-    float playerspeed = 5.5f;
+    public float playerspeed = 5.5f;
     string texto = "hello world";
     bool isGrounded = false;
 
@@ -19,6 +19,6 @@ public class PLAYER_CONTROLER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3 (1,0,0)
+        transform.position += new Vector3 (Input.GetAxis ("Horizontal"),0,0)* playerspeed * Time.deltaTime;
     }
 }
