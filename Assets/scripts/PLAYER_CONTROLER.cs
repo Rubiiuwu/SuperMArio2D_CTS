@@ -9,8 +9,8 @@ public class PLAYER_CONTROLER : MonoBehaviour
     string texto = "hello world";
     bool isGrounded = false;
 
-    // CUM is called before the first frame update
-    void CUM()
+    // Start is called before the first frame update
+    void Start()
     {
         playerhealth = 10; 
         Debug.Log(texto);
@@ -19,6 +19,6 @@ public class PLAYER_CONTROLER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += new Vector3 (1,0,0)
     }
 }
