@@ -15,4 +15,16 @@ public class enemigos : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter(Collision2D collision) 
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Mario muerto");
+            Destroy(collision.gameObject);
+        }
+
+
+
+    }
 }

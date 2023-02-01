@@ -19,6 +19,11 @@ public class GroundSensor : MonoBehaviour
        isGrounded = true;     
        controller.anim.SetBool("isJumping", false);
        }
+       else if (other.gameObject.layer == 6)
+       {
+        Debug.Log("goomba muerto");
+        Destroy(other.gameObject);
+       }
 
        if(other.gameObject.tag == "DeadZone")
       { 
