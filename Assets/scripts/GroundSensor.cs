@@ -4,16 +4,45 @@ using UnityEngine;
 
 public class GroundSensor : MonoBehaviour
 {
-   public bool isGrounded;
+    private PlayerController controller;
+    public bool isGrounded;
 
-    private void OnTriggerEnter2D(Collider2D other) 
-   {
-        isGrounded = true; 
-   }
+    void Awake() 
+    {
+        controller = GetComponentInParent<PlayerController>();    
+    }
 
-void OnTriggerExit2D(Collider2D other)
-   {
-        isGrounded = false; 
-   }
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+      if (other.gameObject.layer == 3)
+       {
+       isGrounded = true;     
+       controller.anim.SetBool("isJumping", false);
+       }
 
+       if(other.gameObject.tag == "DeadZone")
+      { 
+        Debug.Log("Estoy muerto");
+      }
+
+    }
+
+    void OnTriggerStay2D(Collider2D other) 
+    {
+        if (other.gameObject.layer == 3)
+       {
+       isGrounded = true;     
+       controller.anim.SetBool("isJumping", false);
+       }
+    }
+
+    void OnTriggerExit2D(Collider2D other) 
+    {
+      if (other.gameObject.layer == 3)
+      {
+        isGrounded = false;
+        controller.anim.SetBool("IsJumping", true);
+      }
+
+    }
 }
