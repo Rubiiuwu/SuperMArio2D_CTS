@@ -15,6 +15,7 @@ public class enemy : MonoBehaviour
     {
          anim = GetComponent<Animator>();
         boxCollider = GetComponent <BoxCollider2D>();
+        rBody = GetComponent <Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class enemy : MonoBehaviour
         Destroy(this.gameObject, 0.5f);
         }
 
-    void OnCollisionEnter(Collision2D colision) 
+    void OnCollisionEnter2D(Collision2D colision) 
     {
         if(colision.gameObject.tag == "Player")
         {
@@ -41,7 +42,7 @@ public class enemy : MonoBehaviour
         if(colision.gameObject.tag == "ColisionGoomba")
         {
            if(horizontal == 1)
-           
+
            {
             horizontal = -1;
            }
@@ -52,4 +53,6 @@ public class enemy : MonoBehaviour
         }
         
     }
-}
+
+   
+ }
