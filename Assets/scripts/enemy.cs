@@ -30,12 +30,26 @@ public class enemy : MonoBehaviour
         Destroy(this.gameObject, 0.5f);
         }
 
-    void OnCollisionEnter(Collision2D collision) 
+    void OnCollisionEnter(Collision2D colision) 
     {
-        if(collision.gameObject.tag == "Player")
+        if(colision.gameObject.tag == "Player")
         {
             Debug.Log("Mario muerto");
-            Destroy(collision.gameObject);
+            Destroy(colision.gameObject);
         }
+
+        if(colision.gameObject.tag == "ColisionGoomba")
+        {
+           if(horizontal == 1)
+           
+           {
+            horizontal = -1;
+           }
+           else
+           {
+            horizontal = 1;
+           }
+        }
+        
     }
 }
