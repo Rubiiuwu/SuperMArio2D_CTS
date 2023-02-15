@@ -53,6 +53,5 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate() 
     {
         rBody.velocity = new Vector2 (horizontal*playerSpeed, rBody.velocity.y);
-
     }
 }

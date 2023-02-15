@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class Coin : MonoBehaviour
 {
     public float speed;
     float horizontal = 1;
     Animator anim;
     BoxCollider2D boxCollider;
-    Rigidbody2D rBody;
     SFXManager SFXManager;
+    Rigidbody2D rBody;
     SoundManager SoundManager;
     
+
     // Start is called before the first frame update
     void Start()
     {
-         anim = GetComponent<Animator>();
-        boxCollider = GetComponent <BoxCollider2D>();
+        anim = GetComponent<Animator>();
+        boxCollider = GetComponent <BoxCollider2D>(); 
         rBody = GetComponent <Rigidbody2D>();
 
         SFXManager = GameObject.Find("SFXManager").GetComponent<SFXManager>();
@@ -24,32 +25,28 @@ public class enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-      rBody.velocity = new Vector2(horizontal * speed, rBody.velocity.y); 
-    }
-
-        public void Die ()
+        void Update()
      {
-        anim.SetBool("IsDead", true);
+      rBody.velocity = new Vector2(horizontal * speed, rBody.velocity.y); 
+     }
+        public void coin ()
+
+        {
+        anim.SetBool("coin", true);
         boxCollider.enabled = false;
         Destroy(this.gameObject, 0.5f);
         }
-
-    void OnCollisionEnter2D(Collision2D colision) 
+            void OnCollisionEnter2D(Collision2D colision) 
     {
         if(colision.gameObject.tag == "Player")
         {
-            Debug.Log("Mario muerto");
+            Debug.Log("click");
             Destroy(colision.gameObject);
-            SFXManager.MarioDeath();
-            SoundManager.StopBGM();
         }
 
-        if(colision.gameObject.tag == "ColisionGoomba")
+        if(colision.gameObject.tag == "ColisionCoin")
         {
            if(horizontal == 1)
-
            {
             horizontal = -1;
            }
@@ -61,5 +58,5 @@ public class enemy : MonoBehaviour
         
     }
 
-   
- }
+
+}
