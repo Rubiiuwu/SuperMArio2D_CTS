@@ -9,6 +9,7 @@ public class enemy : MonoBehaviour
     Animator anim;
     BoxCollider2D boxCollider;
     Rigidbody2D rBody;
+    SFXManager SFXManager;
     
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,8 @@ public class enemy : MonoBehaviour
          anim = GetComponent<Animator>();
         boxCollider = GetComponent <BoxCollider2D>();
         rBody = GetComponent <Rigidbody2D>();
+
+        SFXManager = GameObject.Find("SFXManager").GetComponent<SFXManager>();
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class enemy : MonoBehaviour
         {
             Debug.Log("Mario muerto");
             Destroy(colision.gameObject);
+            SFXManager.MarioDeath();
         }
 
         if(colision.gameObject.tag == "ColisionGoomba")
