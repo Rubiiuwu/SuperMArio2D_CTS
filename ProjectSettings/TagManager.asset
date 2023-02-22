@@ -8,6 +8,7 @@ TagManager:
   - player
   - ColisionGoomba
   - CollisionCoin
+  - CollisonFlag
   layers:
   - Default
   - TransparentFX

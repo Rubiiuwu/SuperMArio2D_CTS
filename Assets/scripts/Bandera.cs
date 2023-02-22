@@ -2,27 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Bandera : MonoBehaviour
 {
-    Animator anim;
     BoxCollider2D boxCollider;
     SFXManager sfxManager;
-    
-    // Start is called before the first frame update
+    SoundManager soundManager;
 
+    // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         sfxManager = GameObject.Find("SFXManager").GetComponent<SFXManager>();
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
-       void OnCollisionEnter2D(Collision2D colision)
+
+    // Update is called once per frame
+    void OnCollisionEnter2D(Collision2D colision)
     {
         if (colision.gameObject.tag == "Player")
         {
             boxCollider.enabled = false;
-            Destroy(this.gameObject);
-            sfxManager.Coin();
+            sfxManager.Bandera();
+            soundManager.StopBGM();
         }
     }
 }

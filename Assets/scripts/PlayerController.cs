@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     private Coin coin;
     public SFXManager sfxManager;
+    private Bandera flag;
 
     // Start is called before the first frame update
     void Start()
@@ -59,14 +60,5 @@ public class PlayerController : MonoBehaviour
     {
         rBody.velocity = new Vector2 (horizontal*playerSpeed, rBody.velocity.y);
     }
-    void OnCollisionEnter2D(Collision2D colision)
-    {
-        if (colision.gameObject.tag == "CollisionCoin")
-        {
-            Coin coin = colision.gameObject.GetComponent<Coin>();
-            sfxManager.Coin();
-            coin.Pick(); 
 
-        }
-    }
 }
