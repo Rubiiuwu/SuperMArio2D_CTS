@@ -25,4 +25,9 @@ public class SFXManager : MonoBehaviour
    {
     source.PlayOneShot(marioDeath);
    }
+   
+    public void Coin()
+    {
+        source.PlayOneShot(coin);
+    }
 }
