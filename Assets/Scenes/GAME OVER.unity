@@ -183,10 +183,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 77cf6cbc481e42c41bb99e6d16300fab, type: 3}
-    m_FontSize: 10
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MENU
+  m_Text: back to MENU
 --- !u!222 &50673999
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.58592916, g: 0.84971416, b: 0.9339623, a: 1}
+  m_Color: {r: 0.26415092, g: 0.12335349, b: 0.14135781, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -929,10 +929,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 77cf6cbc481e42c41bb99e6d16300fab, type: 3}
-    m_FontSize: 10
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLAY
+  m_Text: PLAY again
 --- !u!222 &434699482
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 443242543}
   - component: {fileID: 443242546}
   m_Layer: 5
-  m_Name: MENU
+  m_Name: BACKTOMENU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -988,7 +988,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 352.5901, y: 90.6507}
+  m_SizeDelta: {x: 589.952, y: 160.9705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &443242543
 MonoBehaviour:
@@ -1036,7 +1036,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1894763151}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1653,8 +1653,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -39}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 6.337, y: 40.2124}
+  m_SizeDelta: {x: 112.6739, y: 258.4247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018918923
 MonoBehaviour:
@@ -2185,7 +2185,7 @@ GameObject:
   - component: {fileID: 1590023102}
   - component: {fileID: 1590023105}
   m_Layer: 5
-  m_Name: Play
+  m_Name: PlayAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2210,7 +2210,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 352.5901, y: 90.6507}
+  m_SizeDelta: {x: 595.7379, y: 150.0417}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590023102
 MonoBehaviour:
