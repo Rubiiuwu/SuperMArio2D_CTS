@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Bandera flag;
     BoxCollider2D boxCollider;
     public Text textoContador;
+    GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +35,15 @@ public class PlayerController : MonoBehaviour
         contadorMonedas = 0;
         playerHealth = 10;
         Debug.Log(texto);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(gameManager .isGameOver == false);
+        {
+
         horizontal = Input.GetAxis("Horizontal");
 
         //transform.position += new Vector3(horizontal, 0, 0) * playerSpeed * Time.deltaTime;
@@ -58,7 +63,9 @@ public class PlayerController : MonoBehaviour
             {
                 rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 anim.SetBool("IsJumping", true);
-            }
+            }    
+
+        }
 
     }
 
@@ -76,5 +83,14 @@ public class PlayerController : MonoBehaviour
             textoContador.text = "monedas " + contadorMonedas;
         }
     }
+
+    /*void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Coin")
+        {
+            gameManager.AddCoin();
+            Destroy(collider.gameObject);
+        }
+    }*/
 
 }
