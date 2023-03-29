@@ -4258,6 +4258,7 @@ MonoBehaviour:
   isGameOver: 0
   canShoot: 0
   powerUpDuration: 5
+  powerUpTimer: 0
   coinText: {fileID: 0}
 --- !u!1 &140696665
 GameObject:

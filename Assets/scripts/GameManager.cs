@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     public Text coinText;
     int coins;
 
-    void update ()
+//importante poner "Update" en mayusc porque sino se detecta como nueva función y no hace referéncia.
+    void Update ()
     {
         ShootPowerUp();
     }
