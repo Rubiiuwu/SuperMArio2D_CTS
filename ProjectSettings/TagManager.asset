@@ -9,6 +9,8 @@ TagManager:
   - ColisionGoomba
   - CollisionCoin
   - CollisonFlag
+  - Bullet
+  - powerup
   layers:
   - Default
   - TransparentFX

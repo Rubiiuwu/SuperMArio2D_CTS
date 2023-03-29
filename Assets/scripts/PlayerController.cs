@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     BoxCollider2D boxCollider;
     public Text textoContador;
     GameManager gameManager;
+    public GameObject bulletPrefab;
+//Variable para posicionar hacia donde se dispara el prefab/la bullet
+    public Transform bulletSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +32,7 @@ public class PlayerController : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         sensor = GameObject.Find("GroundSensor").GetComponent<GroundSensor>();
         anim = GetComponent<Animator>();
-        sensor = GameObject.Find("Coin").GetComponent<GroundSensor>();
         boxCollider = GetComponent<BoxCollider2D>();
-        textoContador = GetComponent<Text>();
         contadorMonedas = 0;
         playerHealth = 10;
         Debug.Log(texto);
@@ -50,11 +51,13 @@ public class PlayerController : MonoBehaviour
 
         if (horizontal < 0)
             {
-                spriteRenderer.flipX = true;
+                //spriteRenderer.flipX = true;
+                transform.rotation = Quaternion.Euler(0, 180 ,0);
                 anim.SetBool("IsRunning", true);
             } else if (horizontal > 0)
                 {
-                    spriteRenderer.flipX = false;
+                    //spriteRenderer.flipX = false;
+                    transform.rotation = Quaternion.Euler(0, 0 ,0);
                     anim.SetBool("IsRunning", true);
                 } else{
                     anim.SetBool("IsRunning", false);
@@ -64,15 +67,26 @@ public class PlayerController : MonoBehaviour
                 rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 anim.SetBool("IsJumping", true);
             }    
-
+        if(Input.GetKeyDown(KeyCode.F) && gameManager.canShoot)
+        {
+            Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         }
-
+        }
     }
 
     void FixedUpdate() 
     {
         rBody.velocity = new Vector2 (horizontal*playerSpeed, rBody.velocity.y);
     }
+
+      void OnTriggerEnter2D (Collider2D collider)
+      {
+        if(collider.gameObject.tag == "powerup")
+        {
+            gameManager.canShoot = true;
+            Destroy(collider.gameObject);
+        }
+      }
 
       void OnCollisionEnter2D(Collision2D colision)
     {
