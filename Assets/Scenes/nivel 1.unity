@@ -4260,6 +4260,7 @@ MonoBehaviour:
   powerUpDuration: 5
   powerUpTimer: 0
   coinText: {fileID: 0}
+  enemiesInScreen: []
 --- !u!1 &140696665
 GameObject:
   m_ObjectHideFlags: 0
@@ -28398,7 +28399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951204792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.957218, y: -4.3408256, z: 0}
+  m_LocalPosition: {x: -29.93, y: -3.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32346,7 +32347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055025092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.9, y: -0.4, z: -10.3850565}
+  m_LocalPosition: {x: -19.82, y: -0.4, z: -10.3850565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

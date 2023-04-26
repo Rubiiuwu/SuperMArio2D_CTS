@@ -13,11 +13,19 @@ public class GameManager : MonoBehaviour
     public float powerUpTimer = 0;
     public Text coinText;
     int coins;
+    //lo de abajo es para limitar el spawn de enemigos
+    public List<GameObject> enemiesInScreen = new List<GameObject>();
+    
 
 //importante poner "Update" en mayusc porque sino se detecta como nueva función y no hace referéncia.
     void Update ()
     {
         ShootPowerUp();
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            KillAllEnemies();
+        }
     }
 
     public void GameOver ()
@@ -34,6 +42,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }*/
+
+    void KillAllEnemies()
+    {
+        for (int i = 0; i < enemiesInScreen.Count; i++)
+        {
+            Destroy (enemiesInScreen[i]);
+        }       
+    }
 
 
     IEnumerator LoadScene ()
@@ -60,6 +76,8 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    
 
 
     /*public void AddCoin() 
